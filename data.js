@@ -3,14 +3,6 @@ const teamMembers = [
     {
         name: "Lucid",
         role: "Founder & Lead Developer"
-    },
-    {
-        name: "Placeholder",
-        role: "Team Member"
-    },
-    {
-        name: "Placeholder",
-        role: "Team Member"
     }
 ];
 
