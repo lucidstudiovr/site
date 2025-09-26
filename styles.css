@@ -272,6 +272,68 @@ section {
     text-align: center;
 }
 
+/* Contact Section */
+.contact {
+    background: #1a1a1a;
+    border-top: 1px solid #333333;
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: #cccccc;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+    min-width: 160px;
+    justify-content: center;
+}
+
+.contact-link:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+}
+
+.discord-link:hover {
+    border-color: #5865F2;
+}
+
+.email-link:hover {
+    border-color: #EA4335;
+}
+
 /* Footer */
 .footer {
     background: #1a1a1a;
@@ -329,6 +391,16 @@ section {
     
     .member-card {
         padding: 2rem;
+    }
+    
+    .contact-links {
+        gap: 2rem;
+    }
+    
+    .contact-link {
+        min-width: 140px;
+        padding: 1.25rem 1.5rem;
+        font-size: 1rem;
     }
 }
 

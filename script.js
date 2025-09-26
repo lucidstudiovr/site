@@ -77,4 +77,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Generate all cards
     generateTeamCards();
     generateGameCards();
+    
+    // Discord link functionality - redirect to homepage
+    const discordLink = document.getElementById('discord-link');
+    if (discordLink) {
+        discordLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const homeSection = document.getElementById('home');
+            if (homeSection) {
+                const navHeight = document.querySelector('.nav').offsetHeight;
+                const targetPosition = homeSection.offsetTop - navHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 });
