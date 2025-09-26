@@ -2,6 +2,10 @@ const teamMembers = [
     {
         name: "Lucid",
         role: "Founder & Lead Developer"
+    },
+    {
+        name: "Screen"
+        role: "Security & Legal Regards"
     }
 ];
 
