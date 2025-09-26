@@ -1,4 +1,3 @@
-// Simple smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -21,17 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Custom Cursor
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor';
-    document.body.appendChild(cursor);
+    if (window.innerWidth > 768) {
+        const cursor = document.createElement('div');
+        cursor.className = 'cursor';
+        document.body.appendChild(cursor);
+        
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX - 3 + 'px';
+            cursor.style.top = e.clientY - 3 + 'px';
+        });
+    }
     
-    document.addEventListener('mousemove', function(e) {
-        cursor.style.left = e.clientX - 3 + 'px';
-        cursor.style.top = e.clientY - 3 + 'px';
-    });
-    
-    // Generate Team Cards
     function generateTeamCards() {
         const teamGrid = document.getElementById('team-grid');
         
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Generate Game Cards
     function generateGameCards() {
         const gamesContainer = document.getElementById('games-container');
         
@@ -74,11 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Generate all cards
     generateTeamCards();
     generateGameCards();
     
-    // Discord link functionality - redirect to homepage
     const discordLink = document.getElementById('discord-link');
     if (discordLink) {
         discordLink.addEventListener('click', function(e) {

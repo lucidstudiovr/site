@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +20,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Custom Cursor */
 .cursor {
     position: fixed;
     width: 6px;
@@ -34,13 +32,22 @@ html {
     filter: saturate(0);
 }
 
+@media (max-width: 768px) {
+    .cursor {
+        display: none;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 4rem;
 }
 
-/* Navigation */
 .nav {
     position: fixed;
     top: 0;
@@ -109,7 +116,6 @@ html {
     color: #ffffff;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -141,7 +147,6 @@ html {
     font-weight: 500;
 }
 
-/* Section Styles */
 section {
     padding: 8rem 0;
 }
@@ -154,7 +159,6 @@ section {
     letter-spacing: -0.02em;
 }
 
-/* About Section */
 .about {
     background: #1a1a1a;
 }
@@ -168,7 +172,6 @@ section {
     text-align: left;
 }
 
-/* Team Section */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -203,7 +206,6 @@ section {
     font-size: 1rem;
 }
 
-/* Games Section */
 .games {
     background: #1a1a1a;
 }
@@ -272,7 +274,6 @@ section {
     text-align: center;
 }
 
-/* Contact Section */
 .contact {
     background: #1a1a1a;
     border-top: 1px solid #333333;
@@ -337,7 +338,6 @@ section {
     border-color: #EA4335;
 }
 
-/* Footer */
 .footer {
     background: #1a1a1a;
     border-top: 1px solid #333333;
@@ -350,18 +350,35 @@ section {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
-        padding: 1.5rem 2rem;
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .nav-brand {
+        order: 1;
     }
     
     .nav-links {
-        gap: 2rem;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        order: 2;
     }
     
     .nav-link {
         font-size: 14px;
+        padding: 0.5rem 0.75rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
     }
     
     .container {
@@ -408,6 +425,20 @@ section {
 }
 
 @media (max-width: 480px) {
+    .nav-container {
+        padding: 0.75rem 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        margin-top: 0.25rem;
+    }
+    
+    .nav-link {
+        font-size: 13px;
+        padding: 0.4rem 0.6rem;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }

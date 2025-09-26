@@ -1,4 +1,3 @@
-// Team Members Data
 const teamMembers = [
     {
         name: "Lucid",
@@ -6,7 +5,6 @@ const teamMembers = [
     }
 ];
 
-// Games Data
 const games = [
     {
         title: "Outbound",
