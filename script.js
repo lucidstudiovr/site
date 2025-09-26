@@ -77,18 +77,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const discordLink = document.getElementById('discord-link');
     if (discordLink) {
-        discordLink.addEventListener('click', function(e) {
+        discordLink.setAttribute('target', '_blank');
+        discordLink.setAttribute('rel', 'noopener noreferrer');
+    }
+
+    const heroArrow = document.getElementById('hero-arrow');
+    const heroSection = document.getElementById('home');
+    const heroContent = document.querySelector('.hero-content');
+
+    function positionHeroArrow() {
+        if (!heroArrow || !heroSection || !heroContent) return;
+        const heroRect = heroSection.getBoundingClientRect();
+        const heroTop = window.scrollY + heroRect.top;
+        const contentRect = heroContent.getBoundingClientRect();
+        const contentBottom = window.scrollY + contentRect.top + contentRect.height;
+        const heroBottom = heroTop + heroSection.offsetHeight;
+        const midpoint = contentBottom + (heroBottom - contentBottom) / 2;
+        const navHeight = document.querySelector('.nav').offsetHeight;
+        const topValue = midpoint - navHeight;
+        heroArrow.style.top = topValue + 'px';
+    }
+
+    positionHeroArrow();
+    window.addEventListener('resize', positionHeroArrow);
+    window.addEventListener('scroll', positionHeroArrow);
+
+    if (heroArrow) {
+        heroArrow.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            const homeSection = document.getElementById('home');
-            if (homeSection) {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
                 const navHeight = document.querySelector('.nav').offsetHeight;
-                const targetPosition = homeSection.offsetTop - navHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                const targetPosition = aboutSection.offsetTop - navHeight;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
         });
     }

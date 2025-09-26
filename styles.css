@@ -128,6 +128,27 @@ html {
     max-width: 800px;
 }
 
+.hero-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.hero-arrow-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.hero-arrow:hover {
+    opacity: 1;
+}
+
 .hero-title {
     font-size: clamp(4rem, 10vw, 8rem);
     font-weight: 800;
@@ -140,6 +161,7 @@ html {
     font-size: clamp(1.4rem, 4vw, 2.2rem);
     color: #ffffff;
     font-weight: 400;
+    
 }
 
 .hero-subtitle em {
