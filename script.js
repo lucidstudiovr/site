@@ -31,7 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    function generateTeamCards() {
+    async function loadTeamData() {
+        try {
+            const response = await fetch('team.json');
+            const teamMembers = await response.json();
+            generateTeamCards(teamMembers);
+        } catch (error) {
+            console.error('Failed to load team data:', error);
+        }
+    }
+    
+    async function loadGamesData() {
+        try {
+            const response = await fetch('games.json');
+            const games = await response.json();
+            generateGameCards(games);
+        } catch (error) {
+            console.error('Failed to load games data:', error);
+        }
+    }
+    
+    function generateTeamCards(teamMembers) {
         const teamGrid = document.getElementById('team-grid');
         
         teamMembers.forEach(member => {
@@ -47,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    function generateGameCards() {
+    function generateGameCards(games) {
         const gamesContainer = document.getElementById('games-container');
         
         games.forEach(game => {
@@ -72,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    generateTeamCards();
-    generateGameCards();
+    loadTeamData();
+    loadGamesData();
     
     const discordLink = document.getElementById('discord-link');
     if (discordLink) {
