@@ -1,0 +1,347 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    line-height: 1.6;
+    cursor: none;
+}
+
+* {
+    cursor: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    filter: saturate(0);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333333;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.nav-brand-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.nav-brand-link:hover {
+    transform: scale(1.05);
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1.2);
+}
+
+.nav-logo:hover {
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: lowercase;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 4rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.hero-subtitle em {
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Section Styles */
+section {
+    padding: 8rem 0;
+}
+
+.section-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    letter-spacing: -0.02em;
+}
+
+/* About Section */
+.about {
+    background: #1a1a1a;
+}
+
+.about-text {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    line-height: 1.7;
+    color: #ffffff;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.member-card {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.member-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.member-name {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.member-role {
+    color: #cccccc;
+    font-size: 1rem;
+}
+
+/* Games Section */
+.games {
+    background: #1a1a1a;
+}
+
+.game-card {
+    margin-top: 2rem;
+}
+
+.game-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #2a2a2a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.game-image:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.game-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(4px);
+    transition: filter 0.3s ease;
+}
+
+.game-image:hover .game-img {
+    filter: blur(2px);
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    backdrop-filter: blur(1px);
+}
+
+.game-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.game-info {
+    margin-top: 2rem;
+}
+
+.game-description {
+    font-size: 1.2rem;
+    color: #cccccc;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    border-top: 1px solid #333333;
+    padding: 3rem 0;
+}
+
+.footer-text {
+    text-align: center;
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1.5rem 2rem;
+    }
+    
+    .nav-links {
+        gap: 2rem;
+    }
+    
+    .nav-link {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 2rem;
+    }
+    
+    .hero {
+        padding: 0 2rem;
+    }
+    
+    section {
+        padding: 6rem 0;
+    }
+    
+    .game-card {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem;
+    }
+    
+    .game-image {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .member-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-text {
+        font-size: 1.1rem;
+    }
+}
